@@ -14,27 +14,28 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      # Step 2: Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # Step 3: Install all dependencies (including devDependencies)
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Build the site
       - name: Build site
         run: npm run build
         env:
           NODE_ENV: production
 
-      # Step 5: Deploy to GitHub Pages
+      # Upload dist folder as artifact for Pages deploy
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        id: deployment
+        uses: actions/deploy-pages@v1
