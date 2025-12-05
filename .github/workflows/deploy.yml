@@ -18,16 +18,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build site
-        run: npm run build
+      - name: Checkout your repository using git
+        uses: actions/checkout@v5
+      - name: Install, build, and upload your site
+        uses: withastro/action@v5
+        with:
+          path: .
         env:
           NODE_ENV: production
-
 
   deploy:
     needs: build
