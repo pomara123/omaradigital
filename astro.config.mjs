@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
-//const isProd = process.env.NODE_ENV === 'production';//
-const isProd = true;
+const isProd = process.env.NODE_ENV === 'production';
+//const isProd = true;
 
 export default defineConfig({
     site: isProd
