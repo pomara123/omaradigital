@@ -1,5 +1,5 @@
-import avatar from '../assets/images/avatar.jpg';
-import hero from '../assets/images/hero.jpg';
+import hero from '../assets/images/headshot_bw.png';
+import avatar from '../assets/images/patrick-photo_bw.png';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
@@ -8,8 +8,8 @@ const siteConfig: SiteConfig = {
         src: avatar,
         alt: 'Ethan Donovan'
     },
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
+    title: "Patrick O'Mara",
+    subtitle: 'Biotech IT and Digital Leader',
     description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
     image: {
         src: '/dante-preview.jpg',
@@ -24,14 +24,14 @@ const siteConfig: SiteConfig = {
             text: 'Projects',
             href: '/projects'
         },
-        {
-            text: 'Blog',
-            href: '/blog'
-        },
-        {
-            text: 'Tags',
-            href: '/tags'
-        }
+        // {
+        //     text: 'Blog',
+        //     href: '/blog'
+        // },
+        // {
+        //     text: 'Tags',
+        //     href: '/tags'
+        // }
     ],
     footerNavLinks: [
         {
@@ -46,28 +46,20 @@ const siteConfig: SiteConfig = {
             text: 'Terms',
             href: '/terms'
         },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
-        }
+        // {
+        //     text: 'Download theme',
+        //     href: 'https://github.com/JustGoodUI/dante-astro-theme'
+        // }
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
-        },
-        {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
-        },
-        {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            text: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/patrick-o-mara/'
         }
     ],
     hero: {
         title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence.\nMy approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products.\nI have a profound appreciation for top-notch software, visual design, and the principles of product-led growth.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/JustGoodUI/dante-astro-theme) or follow me on [Twitter/X](https://twitter.com/justgoodui).",
+        text: "I am Patrick O’Mara, a data and technology leader who focuses on building resilient systems, empowering scientists, and improving decision making. I work at the intersection of cloud engineering, data platforms, and biotech operations. I combine practical intuition with focused research to create clean and scalable solutions.\n\nI have a strong appreciation for elegant architectures, thoughtful automation, and products that simplify complex work for real users. My approach is grounded in collaboration, clarity, and a product focused mindset. I enjoy designing scientific data ecosystems, integrating laboratory and enterprise platforms, and helping teams move efficiently with modern cloud tools.",
         image: {
             src: hero,
             alt: 'A person sitting at a desk in front of a computer'
@@ -79,14 +71,14 @@ const siteConfig: SiteConfig = {
             }
         ]
     },
-    subscribe: {
-        enabled: true,
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
-        form: {
-            action: '#'
-        }
-    },
+    // subscribe: {
+    //     enabled: true,
+    //     title: 'Subscribe to Dante Newsletter',
+    //     text: 'One update per week. All the latest posts directly in your inbox.',
+    //     form: {
+    //         action: '#'
+    //     }
+    // },
     postsPerPage: 8,
     projectsPerPage: 8
 };

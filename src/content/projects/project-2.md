@@ -1,64 +1,64 @@
 ---
-title: 'TimeWarp - Travel Agency Website'
-description: Explore the possibilities of time travel through an immersive website for a fictional travel agency, complete with dynamic destination timelines and interactive historical events.
-publishDate: 'Oct 2 2023'
+title: Serverless Data Platform – Automated Scientific Data Pipelines on GCP
+description: A cloud native data platform that automates extraction, transformation, and loading of scientific datasets across Egnyte, CDD Vault, and BigQuery using Apache Airflow and Cloud Composer.
+publishDate: 'Jan 10 2024'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/project-2.jpg'
-    alt: Project preview
+    src: '../../assets/images/post-1.jpg'
 ---
 
-![Project preview](../../assets/images/project-2.jpg)
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+![Project preview](../../assets/images/post-1.jpg)
 
 **Project Overview:**
-TimeWarp Travel Agency aims to redefine the travel experience by offering an innovative and immersive online platform that explores the concept of time travel. The website combines cutting-edge technology with captivating storytelling to provide users with a unique journey through time.
-
-> Working with Ethan Donovan was a game-changer for our online presence. Their innovative solutions and attention to detail turned our vision into a reality. The website not only looks fantastic but also functions seamlessly. A true professional who exceeded our expectations!
+The Serverless Data Platform is a cloud based data engineering solution built to unify scientific data from Egnyte, CDD Vault, and GCP. It automates ingestion, transformation, and analytics workflows using Airflow on Cloud Composer, enabling teams to transition away from manual file handling and toward standardized, reliable, and scalable data operations.
 
 ## Objectives
 
-1. Create a visually stunning and user-friendly website that captures the essence of time travel.
-2. Integrate interactive elements to engage users and make the experience memorable.
-3. Develop a responsive design to ensure a seamless user experience across various devices.
+1. Build a serverless, automated platform to ingest and process scientific data from multiple sources.
+2. Enable seamless integration between Egnyte, CDD Vault, and BigQuery for unified analytics and reporting.
+3. Reduce manual scientist workflows by replacing CSV based processes with fully automated pipelines.
+4. Provide a scalable architecture supporting new datasets, collaborators, and downstream tools.
+
+## Background
+
+The scientific organization relied heavily on manual data workflows, including performing transformations in spreadsheets, uploading files to multiple systems, and maintaining separate versions of key datasets. These processes caused inconsistent data quality, slow turnaround time, and limited visibility across teams. A cloud native solution was needed to standardize pipeline execution, centralize analytics, and eliminate operational bottlenecks.
+
+## Problem
+
+Data from CRO partners, experiments, and scientific systems existed across Egnyte, CDD Vault, and local file storage. Scientists manually merged and cleaned files, often leading to errors and outdated datasets. There was no unified pipeline framework, no automated transformations, and no consolidated analytical layer. The organization needed a modern, automated platform that could scale without dedicated DevOps support.
 
 ## Features
 
-1. **Dynamic Destination Timelines:**
+1. **Automated Data Pipelines**
+   - Python based Airflow DAGs orchestrate extraction, transformation, and loading across all systems.
+   - Modular pipelines separate extraction and transformation to simplify development and maintenance.
 
-- Users can explore destinations through dynamic timelines, showcasing significant historical events, cultural developments, and architectural milestones.
-- Interactive sliders allow users to navigate through different eras, providing a visual representation of the historical evolution of each location.
+2. **Egnyte to CDD Vault Ingestion**
+   - Automatically pulls CRO data from Egnyte.
+   - Applies transformations and loads results into CDD Vault on a weekly schedule.
 
-2. **Interactive Historical Events:**
+3. **CDD Vault to BigQuery Integration**
+   - Extracts saved searches from CDD Vault.
+   - Loads structured datasets into BigQuery for analytics.
 
-- Users can click on specific points in the timeline to reveal detailed information about key historical events related to the chosen destination.
-- Rich multimedia content, including images, videos, and articles, provides a comprehensive understanding of each event.
+4. **Unified Analytics Layer**
+   - BigQuery datasets support dashboards in Spotfire, Looker, and Metabase.
+   - Schema auto detection enables rapid onboarding of new scientific data types.
 
-3. **Personalized Time Travel Planner:**
-
-- A personalized planner feature enables users to create their time travel itineraries by selecting specific eras and destinations.
-- The system suggests thematic experiences, such as attending historical events or meeting famous personalities.
-
-4. **Time-Port Virtual Reality Experience:**
-
-- For an extra layer of immersion, users can opt for the Time-Port VR experience, allowing them to virtually step into different time periods and explore the surroundings in 360 degrees.
-
-5. **Chronicle Explorer Blog:**
-
-- A blog section, "Chronicle Explorer," offers in-depth articles and stories about various historical periods and their impact on the destinations featured on the platform.
-- Users can engage with the content, comment, and share their own historical insights.
+5. **Cloud Native Operational Management**
+   - Cloud Composer handles Airflow reliability, alerting, scaling, and scheduling.
+   - CI and CD workflows automate deployment of new pipelines and transformations.
 
 ## Technology Stack
 
-- **Frontend:** [Astro.js](https://astro.build/) for a dynamic and responsive user interface and [Tailwind CSS](https://tailwindcss.com/) for styling.
-- **Backend:** Node.js for handling server-side logic and API integration.
-- **Database:** MongoDB for efficient storage and retrieval of historical data.
-- **VR Integration:** A-Frame framework for creating immersive virtual reality experiences.
+- Orchestration: Cloud Composer and Apache Airflow  
+- Cloud Platform: Google Cloud Platform  
+- Storage and Analytics: BigQuery  
+- Integrations: Egnyte Public API, CDD Vault API  
+- Languages: Python  
+- Downstream Tools: Spotfire, Looker, Metabase  
 
 ## Outcome
 
-The TimeWarp Travel Agency Website successfully brings the concept of time travel to life, providing users with a captivating and educational experience. The website not only serves as a travel planning tool but also as an interactive platform that encourages users to explore and appreciate the rich tapestry of human history.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+The Serverless Data Platform eliminated manual data handling and established a centralized, automated system for scientific data processing. It improved data reliability, accelerated reporting, and enabled cross functional teams to work from consistent, analysis ready datasets. The architecture now supports rapid expansion of new pipelines, data sources, and collaborators while maintaining low operational overhead.

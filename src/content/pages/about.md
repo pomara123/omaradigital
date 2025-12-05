@@ -2,42 +2,44 @@
 title: About
 seo:
   title: About Me
-  description: Learn more about the person behind the website and embark on a journey of inspiration and shared experiences.
+  description: Learn more about Patrick O'Mara, a data and technology leader focused on building resilient systems, empowering scientists, and improving decision-making.
   image:
-    src: '../../assets/images/about.jpg'
-    alt: A person sitting at a desk in front of a computer
+    src: '../../assets/images/hiking.png'
+    alt: Patrick O'Mara sitting at a desk in front of a computer
 ---
 
-![Alt text for image](../../assets/images/about.jpg)
+![Patrick O'Mara](../../assets/images/hiking.png)
 
-**Note!:** This about page is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Note!:** This about page is designed to showcase my professional experience, expertise, and approach to technology and leadership.
 
-## Ethan Donovan - Web Developer based in Estonia
+## Patrick O'Mara – Data & Technology Leader
 
-**Greetings!** I'm Ethan Donovan, a passionate web developer residing in the picturesque landscapes of [Estonia](https://en.wikipedia.org/wiki/Estonia). With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of web development.
+**Greetings!** I'm Patrick O'Mara, a data and technology leader specializing in cloud engineering, data platforms, and biotech operations. I love to work at the intersection of **people**, **technology**, **processes**, and **science**. I combine practical intuition with research-driven solutions to build resilient systems that empower scientists and improve decision-making.
 
 ## Skills and Expertise
 
-I specialize in front-end and back-end development, utilizing the latest technologies to build responsive and user-friendly websites. My proficiency includes **HTML**, **CSS**, **JavaScript**, and frameworks such as **Astro.js** for dynamic and interactive user interfaces. On the server side, I'm well-versed in Node.js and have experience with database management systems like MongoDB.
+I bring over **12 years of experience** at the intersection of IT and biotech, leading teams to design, implement, and maintain complex systems that drive operational efficiency and scientific discovery. My expertise spans cloud architecture, application development, systems integrations, DevOps practices, and enterprise configuration management, with a proven track record of connecting laboratory, research, and business platforms. I hold an **MA in Bioinformatics** from Harvard Extension and a BS in Biology, complemented by certifications in AI leadership, cloud engineering, GitOps, and Scrum, equipping me to deliver scalable, reliable, and innovative technology solutions.
+
 
 ## Innovation and Problem-Solving
 
-I thrive on solving complex problems and transforming ideas into functional, elegant websites. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
+I thrive on transforming complex challenges into scalable solutions. From designing serverless data platforms to creating governance frameworks for scientific workflows, I focus on delivering clean, reliable, and actionable results that enable teams to make better decisions faster.
 
-## Global Perspective, Local Impact
+## Leadership and Cross-Functional Impact
 
-Living in Estonia has not only influenced my appreciation for nature and culture but has also shaped my approach to web development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
+Throughout my career, I have led cross-functional teams in biotech and IT environments, implementing systems that integrate operations, data, and scientific research. I emphasize collaboration, communication, and thoughtful automation to drive operational excellence while empowering teams. My people management style focuses on **addressing each team member's individual needs**, providing guidance, mentorship, and support to help everyone thrive and contribute their best.
+
 
 ## Continuous Learning
 
-The dynamic nature of the tech industry inspires me to stay up-to-date with the latest trends and advancements. I'm always eager to expand my skill set and embrace emerging technologies that enhance the functionality and aesthetics of the websites I create.
+I have a deep curiosity for emerging technologies and best practices in cloud, data engineering, and biotech systems. I continually expand my knowledge to remain at the forefront of innovative solutions that support scientific discovery and organizational efficiency.
 
 ## Collaboration and Communication
 
-I believe in the power of collaboration and effective communication. Whether working with clients, designers, or fellow developers, I value clear communication to ensure the success of every project.
+I believe strong communication and cross-team collaboration are critical to success. I work closely with scientists, engineers, and leadership to translate complex technical concepts into actionable strategies, fostering alignment and shared understanding.
 
 ## Get in Touch
 
-Are you looking to elevate your online presence or bring your digital ideas to life? I'd love to hear from you! Feel free to reach out for collaboration, consultation, or just a friendly chat about all things web development.
+Are you looking to improve your data systems, implement scalable cloud solutions, or enhance scientific operations? I'd love to hear from you! Reach out to discuss collaboration, consultation, or innovative technology solutions.
 
-_Let's build something amazing together!_
+_Let's build smarter systems and empower teams together!_

@@ -1,62 +1,64 @@
 ---
-title: CryptoTrader - Cryptocurrency Portfolio Manager
-description: CryptoTrader Dashboard is a comprehensive web application designed to empower cryptocurrency enthusiasts with tools to manage and optimize their digital asset portfolios.
+title: DMTA Request System – Cross-Functional Experiment Request Workflow
+description: A centralized, end-to-end workflow system that streamlines request intake, routing, experiment execution, and result tracking across the full DMTA lifecycle.
 publishDate: 'Jan 10 2024'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/project-7.jpg'
+    src: '../../assets/images/post-1.jpg'
 ---
 
-![Project preview](../../assets/images/project-7.jpg)
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+![Project preview](../../assets/images/post-1.jpg)
 
 **Project Overview:**
-CryptoTrader Dashboard is a comprehensive web application designed to empower cryptocurrency enthusiasts with tools to manage and optimize their digital asset portfolios. By providing real-time market data, analytics, and portfolio tracking, the dashboard offers a seamless experience for users to monitor and enhance their cryptocurrency investments.
+The DMTA Request System is a comprehensive workflow platform designed to orchestrate the full Design–Make–Test–Analyze lifecycle across Product Development, Manufacturing, and dozens of scientific testing teams. It centralizes experiment request intake, automates routing, ensures traceability, and integrates deeply with the organization’s LIMS and downstream systems to provide a transparent and audit-ready workflow for all stakeholders.
 
 ## Objectives
 
-1. Develop a user-friendly and feature-rich dashboard that consolidates real-time data from various cryptocurrency exchanges.
-2. Provide tools for users to analyze market trends, track their portfolio performance, and make informed investment decisions.
-3. Create a secure and efficient platform that ensures users have a holistic view of their cryptocurrency holdings.
+1. Build a unified system to intake, route, and manage experiment requests across all DMTA stages.
+2. Integrate directly with the new Core LIMS to pull authoritative sample data and synchronize results back into legacy systems, including ERP and the company website.
+3. Improve traceability, accountability, and governance across cross-functional workflows involving hundreds of scientists.
+4. Replace the outdated legacy process with a flexible, extensible system that supports evolving scientific and operational requirements.
+
+## Background
+
+Scientific teams required a centralized and transparent process to manage experiment requests and track progress across the DMTA workflow. Product Development and Manufacturing groups submitted testing requests, dozens of upstream teams generated samples and documentation, and numerous testing teams executed experiments. Coordinating this multi-team flow demanded a streamlined system that consolidated data and ensured consistent communication.
+
+## Problem
+
+The legacy request system was disconnected from the new LIMS platform, making it difficult to access critical sample data. Its rigid workflows could not support new process requirements, lacked end-to-end visibility, and created operational inefficiencies. The organization needed a more flexible, data-aware solution with improved traceability, governance, and integration capabilities.
 
 ## Features
 
-1. **Multi-Exchange Integration:**
+1. **Integrated Sample Data Access**
+   - Pulls authoritative sample information directly from the new Core LIMS.
+   - Synchronizes experiment results back to legacy systems for downstream needs.
 
-- CryptoTrader Dashboard aggregates data from multiple cryptocurrency exchanges, allowing users to view their entire portfolio in one centralized location.
-- Real-time updates provide the latest market prices, trading volumes, and order book data.
+2. **End-to-End Request Workflow**
+   - Supports request intake, routing, experiment tracking, and completion notifications.
+   - Includes clear approvals, handoffs, and audit trails.
 
-2. **Portfolio Analytics:**
+3. **Cross-Functional Collaboration**
+   - Aligns Product Development, Manufacturing, and testing groups with consistent workflows.
+   - Improves transparency into request progress and bottlenecks.
 
-- Users can analyze their portfolio's performance through interactive charts and graphs.
-- The dashboard offers insights into historical performance, asset allocation, and profit/loss over time.
+4. **Governance & Data Integrity Controls**
+   - Standardized workflows enforce data quality, required fields, and structured approvals.
+   - Clearly defined ownership and accountability across teams.
 
-3. **Risk Management Tools:**
-
-- Advanced risk management tools help users assess the volatility and potential risks associated with their cryptocurrency investments.
-- Users receive alerts for significant market fluctuations or changes in their portfolio value.
-
-4. **Automated Transaction Tracking:**
-
-- The dashboard automatically tracks and records users' cryptocurrency transactions, simplifying the process of updating and managing portfolios.
-- Users can categorize transactions, add notes, and maintain a comprehensive transaction history.
-
-5. **News and Market Insights:**
-
-- A dedicated section provides real-time news and market insights relevant to users' cryptocurrency holdings.
-- Users can stay informed about market trends, regulatory developments, and news affecting their investment decisions.
+5. **Downstream System Integration**
+   - Pushes validated data to ERP, reporting systems, and customer-facing website content.
+   - Ensures accurate and timely information for internal and external stakeholders.
 
 ## Technology Stack
 
-- Frontend: React for a responsive and interactive user interface.
-- Backend: Django for server-side logic and API integration.
-- Database: PostgreSQL for efficient storage and retrieval of portfolio and market data.
-- API Integration: Integration with cryptocurrency exchange APIs for real-time market data.
+- Request System: Jira (yes, we used Jira as an DMTA request tool)
+- LIMS: Core LIMS  
+- Integrations: Boomi  
+- Backend / Logic: Java, JavaScript, SQL  
+- Database: Oracle  
+- Supporting Systems: ERP, website CMS  
 
 ## Outcome
 
-CryptoTrader Dashboard has become a trusted companion for cryptocurrency investors, offering a consolidated and user-friendly platform for managing their portfolios. The robust analytics, real-time market data, and risk management tools empower users to make informed decisions and navigate the dynamic world of cryptocurrency with confidence.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+The DMTA Request System improved the daily workflows of more than **300 scientists**, enabling faster request processing, improved visibility, and fully traceable experiment tracking. Organization-wide, it ensured consistent and reliable data flow to downstream systems—strengthening reporting, customer-facing materials, and decision-making across scientific and operational teams.

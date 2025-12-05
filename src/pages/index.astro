@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
-import PostPreview from '../components/PostPreview.astro';
 import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -30,7 +29,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
             </div>
         )
     }
-    {
+    <!-- {
         featuredPosts?.length > 0 && (
             <div class="mb-16 sm:mb-24">
                 <h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">Writing</h2>
@@ -42,5 +41,5 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
                 </div>
             </div>
         )
-    }
+    } -->
 </BaseLayout>

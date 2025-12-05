@@ -1,66 +1,49 @@
 ---
-title: 'EcoBuddy: Sustainable Living App'
-description: EcoBuddy is a mobile app that gamifies sustainable living. Users can set eco-friendly goals, track their carbon footprint, and earn virtual rewards for adopting environmentally conscious habits.
-publishDate: 'Jan 02 2024'
+title: Core LIMS Implementation – Enterprise Scientific Data Platform
+description: A scalable, compliant, and extensible Core LIMS foundation enabling end to end scientific and operational workflows across R and D, Operations, and Quality.
+publishDate: 'Jan 10 2024'
+isFeatured: true
 seo:
   image:
-    src: '../../assets/images/project-1.jpg'
-    alt: Project preview
+    src: '../../assets/images/post-1.jpg'
 ---
 
-![Project preview](../../assets/images/project-1.jpg)
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+![Project preview](../../assets/images/post-1.jpg)
 
 **Project Overview:**
-EcoBuddy is a revolutionary mobile application designed to make sustainable living accessible, engaging, and rewarding. With a focus on gamification and real-world impact, EcoBuddy encourages users to adopt eco-friendly habits, reduce their carbon footprint, and contribute to a healthier planet.
+The Core LIMS Implementation created a unified enterprise scientific data platform supporting assays, samples, materials, and inventory across R and D and early development. The initiative delivered a scalable and compliant digital foundation with robust data models, governance standards, permission frameworks, and seamless integrations that enabled complete traceability and operational excellence across scientific teams.
 
 ## Objectives
 
-1. Develop a user-friendly mobile app that motivates individuals to adopt sustainable practices in their daily lives.
-2. Utilize gamification elements to make sustainable living fun and interactive.
-3. Provide educational resources and personalized challenges to empower users to make informed eco-conscious decisions.
+1. Implement a modern Core LIMS platform to centralize data, standardize scientific workflows, and support compliance.
+2. Design flexible and scalable data models to support assays, samples, materials, and inventory processes.
+3. Establish governance frameworks, data integrity controls, and permission models that meet internal and regulatory expectations.
+4. Integrate LIMS with major systems including ELN, ERP, cloud analytics, and custom applications to support smooth end to end data flow.
+5. Enable complete traceability across scientific, operational, and early manufacturing activities.
 
-## Features
+## Description
 
-1. **EcoScore and Challenges:**
+I led the full implementation and ownership of the Core LIMS platform. This involved architecting data models, defining governance standards, creating permission structures, and building integrations across the digital ecosystem used by scientific teams. The result was a unified and compliant system that improved data integrity and supported cross functional workflows across the organization.
 
-- Users are assigned an EcoScore based on their sustainable activities and choices.
-- Daily and weekly challenges encourage users to adopt new habits and compete with friends or the community to earn EcoPoints.
+## Key Highlights
 
-2. **Personalized Eco-Goals:**
-
-- Users can set and track personalized eco-goals, such as reducing plastic usage, conserving water, or choosing eco-friendly transportation.
-- The app provides tips and suggestions to help users achieve their goals.
-
-3. **Green Rewards Marketplace:**
-
-- EcoPoints earned through challenges and sustainable actions can be redeemed in a virtual Green Rewards Marketplace.
-- The marketplace offers discounts on eco-friendly products, services, and even contributions to environmental causes.
-
-4. **Community Hub:**
-
-- A community feature allows users to connect, share their eco-friendly achievements, and inspire others.
-- Users can join local eco-groups, organize clean-up events, and collaborate on sustainability projects.
-
-5. **EcoEducator AI Assistant:**
-
-- An AI-powered assistant, EcoEducator, provides personalized eco-tips, facts, and information based on users' preferences and habits.
-- Users can chat with EcoEducator for instant advice on sustainable living.
+- Designed Core LIMS data models supporting assays, samples, materials, and inventory workflows.
+- Created governance standards, permission structures, and data integrity controls that supported regulatory and operational needs.
+- Integrated LIMS with ELN, ERP, storage systems, and cloud analytics tools to ensure smooth and reliable end to end data flow.
+- Led alignment across R and D, Operations, Quality, and Informatics to define standardized digital workflows.
+- Enabled complete traceability of materials, samples, and scientific data from early research through process development.
 
 ## Technology Stack
 
-- Frontend: React Native for cross-platform mobile app development.
-- Backend: Firebase for real-time data synchronization and user authentication.
-- Database: Firestore for scalable and flexible data storage.
-- AI Integration: Dialogflow for natural language processing and conversation with EcoEducator.
+Core LIMS  
+Java  
+JavaScript  
+REST APIs  
+OData  
+SQL  
 
 ## Outcome
 
-EcoBuddy has successfully created a community of environmentally conscious individuals who actively participate in sustainable living practices. The app not only educates and motivates users but also provides tangible rewards for their commitment to a greener lifestyle, fostering a positive impact on the environment.
+The Core LIMS platform became the central digital system supporting scientific operations. It improved data quality, created more traceable workflows, supported compliance requirements, and provided a scalable foundation for future expansion into quality, manufacturing, and advanced analytics. The implementation unified data that had previously been siloed and allowed the organization to operate with greater precision, visibility, and confidence.
 
-## Client Testimonial
-
-> We couldn't be happier with the results delivered by Ethan Donovan. From the initial concept discussions to the final product, their responsiveness and collaborative approach were impressive. Our startup's website now stands out, thanks to their creative input and commitment to excellence.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Note:** This case study is formatted to match the Dante Astro.js theme for consistent presentation across the portfolio.
