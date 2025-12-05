@@ -7,7 +7,7 @@ import { defineConfig } from 'astro/config';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
-    site: isProd ? 'https://astronaut.github.io' : 'http://localhost:4321',
+    site: isProd ? 'https://pomara123.github.io/patrick-omara-website' : 'http://localhost:4321',
     base: isProd ? '/patrick-omara-website/' : '/',
     vite: {
         plugins: [tailwindcss()]
