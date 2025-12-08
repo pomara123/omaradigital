@@ -40,6 +40,6 @@ I believe strong communication and cross-team collaboration are critical to succ
 
 ## Get in Touch
 
-Are you looking to improve your data systems, implement scalable cloud solutions, or enhance scientific operations? I'd love to hear from you! Reach out to discuss collaboration, consultation, or innovative technology solutions.
+Are you looking to improve your data systems, implement scalable cloud solutions, or enhance scientific operations? I'd love to hear from you! [Reach out](/contact) to discuss collaboration, consultation, or innovative technology solutions.
 
 _Let's build smarter systems and empower teams together!_

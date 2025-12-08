@@ -5,10 +5,10 @@ publishDate: 'Jan 10 2024'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/post-1.jpg'
+    src: '../../assets/images/dmta.png'
 ---
 
-![Project preview](../../assets/images/post-1.jpg)
+![Project preview](../../assets/images/dmta.png)
 
 **Project Overview:**
 The DMTA Request System is a comprehensive workflow platform designed to orchestrate the full Design–Make–Test–Analyze lifecycle across Product Development, Manufacturing, and dozens of scientific testing teams. It centralizes experiment request intake, automates routing, ensures traceability, and integrates deeply with the organization’s LIMS and downstream systems to provide a transparent and audit-ready workflow for all stakeholders.
@@ -61,4 +61,4 @@ The legacy request system was disconnected from the new LIMS platform, making it
 
 ## Outcome
 
-The DMTA Request System improved the daily workflows of more than **300 scientists**, enabling faster request processing, improved visibility, and fully traceable experiment tracking. Organization-wide, it ensured consistent and reliable data flow to downstream systems—strengthening reporting, customer-facing materials, and decision-making across scientific and operational teams.
+The DMTA Request System improved the daily workflows of more than 300 scientists, enabling faster request processing, improved visibility, and fully traceable experiment tracking. Organization-wide, it ensured consistent and reliable data flow to downstream systems, strengthening reporting, customer-facing materials, and decision-making across scientific and operational teams.

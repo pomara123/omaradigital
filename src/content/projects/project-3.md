@@ -5,10 +5,10 @@ publishDate: 'Jan 10 2024'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/post-1.jpg'
+    src: '../../assets/images/gap_analysis.png'
 ---
 
-![Project preview](../../assets/images/post-1.jpg)
+![Project preview](../../assets/images/gap_analysis.png)
 
 **Project Overview:**  
 This project evaluated the current informatics landscape across research, biology, chemistry, proteomics, operations, and data science teams. The assessment identified process gaps, system limitations, data challenges, and opportunities to modernize the scientific digital ecosystem. The outcome provided a clear future state vision and a prioritized roadmap that strengthens data quality, improves workflow efficiency, and prepares the organization for increased AI and ML adoption.
@@ -28,6 +28,9 @@ The organization relied on a mixture of spreadsheets, legacy processes, isolated
 
 Teams required better systems for registration, sample tracking, request coordination, instrument data capture, analytics, and asset oversight. Data resided across CDD Vault, Egnyte, spreadsheets, local drives, and on-prem servers. Key limitations included lack of inventory tracking, no unified request management, inconsistent data normalization, limited cloud use, and fragmented ETL solutions. These gaps prevented scalable scientific operations and blocked future AI and ML initiatives.
 
+![Gap Analysis Process](../../assets/images/gap_analysis_process.png)
+<small>Visual representation of the gap analysis process.</small>
+
 ## Features
 
 1. **Comprehensive Workflow Review**  
@@ -45,6 +48,9 @@ Teams required better systems for registration, sample tracking, request coordin
 4. **Future State Architecture**  
    - Designed a conceptual architecture covering registration, lab execution, data aggregation, analytics, integrations, and workflow management.  
    - Emphasized scalable cloud storage, unified pipelines, and structured data models.
+   
+   ![Future State Architecture](../../assets/images/ideal_state.png)
+   <small>Conceptual view of the future-state scientific informatics architecture.</small>
 
 5. **Industry Alignment**  
    - Incorporated trends in AI, ML, digital twins, cloud computing, and modern data engineering practices.  

@@ -1,24 +1,24 @@
 ---
-title: Core LIMS Implementation – Enterprise Scientific Data Platform
+title: LIMS Implementation – Enterprise Scientific Data Platform
 description: A scalable, compliant, and extensible Core LIMS foundation enabling end to end scientific and operational workflows across R and D, Operations, and Quality.
 publishDate: 'Jan 10 2024'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/post-1.jpg'
+    src: '../../assets/images/lims_edr.png'
 ---
 
-![Project preview](../../assets/images/post-1.jpg)
+![Project preview](../../assets/images/lims_edr.png)
 
 **Project Overview:**
-The Core LIMS Implementation created a unified enterprise scientific data platform supporting assays, samples, materials, and inventory across R and D and early development. The initiative delivered a scalable and compliant digital foundation with robust data models, governance standards, permission frameworks, and seamless integrations that enabled complete traceability and operational excellence across scientific teams.
+The LIMS Implementation created a unified enterprise scientific data platform supporting assays, samples, materials, and inventory across R&D, Product Development, and Manufacturing. The initiative delivered a scalable and compliant digital foundation with robust data models, governance standards, permission frameworks, and seamless integrations that enabled complete traceability and operational excellence across scientific teams.
 
 ## Objectives
 
-1. Implement a modern Core LIMS platform to centralize data, standardize scientific workflows, and support compliance.
+1. Implement a modern LIMS platform (Core LIMS) to centralize data, standardize scientific workflows, and support compliance.
 2. Design flexible and scalable data models to support assays, samples, materials, and inventory processes.
 3. Establish governance frameworks, data integrity controls, and permission models that meet internal and regulatory expectations.
-4. Integrate LIMS with major systems including ELN, ERP, cloud analytics, and custom applications to support smooth end to end data flow.
+4. Integrate LIMS with major systems including custom applications, DMTA request systems, ERP, and website to support smooth end to end data flow.
 5. Enable complete traceability across scientific, operational, and early manufacturing activities.
 
 ## Description
@@ -29,8 +29,8 @@ I led the full implementation and ownership of the Core LIMS platform. This invo
 
 - Designed Core LIMS data models supporting assays, samples, materials, and inventory workflows.
 - Created governance standards, permission structures, and data integrity controls that supported regulatory and operational needs.
-- Integrated LIMS with ELN, ERP, storage systems, and cloud analytics tools to ensure smooth and reliable end to end data flow.
-- Led alignment across R and D, Operations, Quality, and Informatics to define standardized digital workflows.
+- Integrated LIMS custom applications, DMTA request systems, ERP, and website tools to ensure smooth and reliable end to end data flow.
+- Led alignment across R&D, Product Development, Manufacturing, Operations, Quality, and Informatics to define standardized digital workflows.
 - Enabled complete traceability of materials, samples, and scientific data from early research through process development.
 
 ## Technology Stack
@@ -45,5 +45,3 @@ SQL
 ## Outcome
 
 The Core LIMS platform became the central digital system supporting scientific operations. It improved data quality, created more traceable workflows, supported compliance requirements, and provided a scalable foundation for future expansion into quality, manufacturing, and advanced analytics. The implementation unified data that had previously been siloed and allowed the organization to operate with greater precision, visibility, and confidence.
-
-**Note:** This case study is formatted to match the Dante Astro.js theme for consistent presentation across the portfolio.

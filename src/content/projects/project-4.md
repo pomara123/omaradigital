@@ -5,10 +5,10 @@ publishDate: 'Dec 05 2025'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/post-1.jpg'
+    src: '../../assets/images/governance.jpg'
 ---
 
-![Project preview](../../assets/images/post-1.jpg)
+![Project preview](../../assets/images/governance.jpg)
 
 **Project Overview:**
 The Strategic & Tactical Governance Frameworks initiative established a unified system to align organizational strategy with day-to-day execution. Strategic governance focused on decision-makers guiding priorities and budgets, while tactical governance engaged hands-on contributors responsible for operational execution and problem solving. The frameworks defined stakeholders, meeting cadences, accountability, and “living” roadmaps to maintain alignment across teams and initiatives.
@@ -55,6 +55,10 @@ Before this project, decision-making and operational execution were disconnected
    - Standardized reporting and dashboards for both strategic and tactical teams.
    - Bridges high-level organizational priorities with operational execution.
    - Ensures consistent communication and visibility across the organization.
+
+![Living Roadmap](../../assets/images/living_roadmap.png)
+<small>A visual representation of how the roadmap evolves month-to-month, reflecting shifting priorities, updated timelines, and ongoing progress.</small>
+
 
 ## Outcome
 

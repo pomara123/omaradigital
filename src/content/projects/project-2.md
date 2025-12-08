@@ -5,10 +5,10 @@ publishDate: 'Jan 10 2024'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/post-1.jpg'
+    src: '../../assets/images/data_platform.jpg'
 ---
 
-![Project preview](../../assets/images/post-1.jpg)
+![Project preview](../../assets/images/data_platform.jpg)
 
 **Project Overview:**
 The Serverless Data Platform is a cloud based data engineering solution built to unify scientific data from Egnyte, CDD Vault, and GCP. It automates ingestion, transformation, and analytics workflows using Airflow on Cloud Composer, enabling teams to transition away from manual file handling and toward standardized, reliable, and scalable data operations.
@@ -62,3 +62,9 @@ Data from CRO partners, experiments, and scientific systems existed across Egnyt
 ## Outcome
 
 The Serverless Data Platform eliminated manual data handling and established a centralized, automated system for scientific data processing. It improved data reliability, accelerated reporting, and enabled cross functional teams to work from consistent, analysis ready datasets. The architecture now supports rapid expansion of new pipelines, data sources, and collaborators while maintaining low operational overhead.
+
+## Details
+
+📖 **Further Reading**  
+For a deeper dive into the architecture and implementation, check out my Medium article:  
+👉 [Building a Serverless Scientific Data Platform on GCP](https://medium.com/@pomara123/an-approach-to-a-serverless-data-platform-for-biotech-start-ups-0cd0138e9c16)
