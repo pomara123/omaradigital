@@ -1,8 +1,9 @@
 ---
-title: LIMS Implementation – Enterprise Scientific Data Platform
+title: Enterprise LIMS Implementation
 description: A scalable, compliant, and extensible Core LIMS foundation enabling end to end scientific and operational workflows across R and D, Operations, and Quality.
-publishDate: 'Jan 10 2024'
+publishDate: 'Dec 4 2025'
 isFeatured: true
+order: 40
 seo:
   image:
     src: '../../assets/images/lims_edr.png'

@@ -1,8 +1,9 @@
 ---
-title: Serverless Data Platform – Automated Scientific Data Pipelines on GCP
+title: Serverless Data Platform using Google Cloud
 description: A cloud native data platform that automates extraction, transformation, and loading of scientific datasets across Egnyte, CDD Vault, and BigQuery using Apache Airflow and Cloud Composer.
-publishDate: 'Jan 10 2024'
+publishDate: 'Dec 3 2025'
 isFeatured: true
+order: 30
 seo:
   image:
     src: '../../assets/images/data_platform.jpg'

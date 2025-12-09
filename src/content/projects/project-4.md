@@ -1,8 +1,9 @@
 ---
-title: Strategic & Tactical Governance Frameworks – Cross-Functional Decision and Execution Alignment
+title: Strategic & Tactical Governance Frameworks
 description: A centralized governance framework that aligns strategic decision-making with tactical execution, streamlines stakeholder engagement, and provides transparent tracking of initiatives and budgets across the organization.
 publishDate: 'Dec 05 2025'
 isFeatured: true
+order: 50
 seo:
   image:
     src: '../../assets/images/governance.jpg'

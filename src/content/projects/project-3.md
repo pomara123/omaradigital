@@ -1,8 +1,9 @@
 ---
-title: Gap Analysis - Informatics Assessment and Future State Strategy
+title: Informatics Future-State Strategy
 description: A comprehensive assessment of scientific informatics capabilities with a forward looking strategy for data, systems, workflows, and analytics across research and operations.
-publishDate: 'Jan 10 2024'
+publishDate: 'Dec 2 2025'
 isFeatured: true
+order: 20
 seo:
   image:
     src: '../../assets/images/gap_analysis.png'

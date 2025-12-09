@@ -1,0 +1,13 @@
+---
+// Define the props this component expects
+interface Props {
+  startYear: number;
+}
+const { startYear } = Astro.props;
+
+// Calculate the experience years
+const currentYear = new Date().getFullYear();
+const experienceYears = currentYear - startYear;
+---
+
+{experienceYears}

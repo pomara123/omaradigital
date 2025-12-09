@@ -1,8 +1,9 @@
 ---
-title: DMTA Request System – Cross-Functional Experiment Request Workflow
+title: DMTA Request System
 description: A centralized, end-to-end workflow system that streamlines request intake, routing, experiment execution, and result tracking across the full DMTA lifecycle.
-publishDate: 'Jan 10 2024'
+publishDate: 'Dec 1 2025'
 isFeatured: true
+order: 10
 seo:
   image:
     src: '../../assets/images/dmta.png'

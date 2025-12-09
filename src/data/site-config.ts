@@ -59,8 +59,8 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I am Patrick O’Mara, a data and technology leader who focuses on building resilient systems, empowering scientists, and improving decision making. I work at the intersection of cloud engineering, data platforms, and biotech operations. I combine practical intuition with focused research to create clean and scalable solutions.\n\nI have a strong appreciation for elegant architectures, thoughtful automation, and products that simplify complex work for real users. My approach is grounded in collaboration, clarity, and a product focused mindset. I enjoy designing scientific data ecosystems, integrating laboratory and enterprise platforms, and helping teams move efficiently with modern cloud tools.",
+        title: 'People, Technology, Data, and Scientific Process Leader',
+        text: "I am Patrick O’Mara, a data and technology leader who believes that the intersection of people, technology, science, and processes is central to a successful biotech or pharma organization. I take a practical, grounded approach to implementing thoughtful strategy through agility, collaboration, and scalable solutions.",
         image: {
             src: hero,
             alt: 'A person sitting at a desk in front of a computer'
