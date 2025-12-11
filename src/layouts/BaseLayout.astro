@@ -31,7 +31,7 @@ import Nav from '../components/Nav.astro';
     </script>
 
     <ClientRouter />
-    <script is:inline src="/theme-toggle.js"></script>
+    <script is:inline src={`${import.meta.env.BASE_URL}theme-toggle.js`}></script>
   </head>
 
   <body class="bg-main text-main">
