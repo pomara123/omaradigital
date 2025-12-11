@@ -8,6 +8,7 @@ import Nav from '../components/Nav.astro';
 export type Props = HeadProps & { showHeader?: boolean };
 
 const { showHeader = true, ...head } = Astro.props;
+const GA_ID = 'G-G9MNF6BLH1';
 ---
 
 <!doctype html>
@@ -15,26 +16,20 @@ const { showHeader = true, ...head } = Astro.props;
   <head>
     <BaseHead {...head} />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QLCY5G6T0"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      // 'astro:page-load' fires on the initial load AND after every View Transition.
-      // This ensures we capture every page view exactly once.
-      document.addEventListener('astro:page-load', () => {
-        gtag('config', 'G-3QLCY5G6T0', {
-          page_path: window.location.pathname,
-        });
-      });
-    </script>
-    <script is:inline>
+    <!-- Dark theme -->
+    <script>
       if (localStorage.theme === 'dark') {
         document.documentElement.classList.add('dark');
       }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_ID);
     </script>
 
     <ClientRouter />
