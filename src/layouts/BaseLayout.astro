@@ -18,16 +18,16 @@ const GA_ID = 'G-3QLCY5G6T0';
 
     <!-- Google Analytics -->
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-    <script>
+
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', '${GA_ID}');
+      gtag('config', '{GA_ID}');
     </script>
     <!-- End Google Analytics -->
 
-    <script>
-      // Apply dark theme if set in localStorage
+    <script is:inline>
       if (localStorage.theme === 'dark') {
         document.documentElement.classList.add('dark');
       }
@@ -48,9 +48,9 @@ const GA_ID = 'G-3QLCY5G6T0';
     </div>
 
     <!-- SPA route tracking for Google Analytics -->
-    <script>
+    <script is:inline>
       document.addEventListener('astro:route', () => {
-        gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+        gtag('config', '{GA_ID}', { page_path: window.location.pathname });
       });
     </script>
   </body>
