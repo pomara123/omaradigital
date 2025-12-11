@@ -80,8 +80,8 @@ const siteConfig: SiteConfig = {
     //         action: '#'
     //     }
     // },
-    postsPerPage: 8,
-    projectsPerPage: 8
+    postsPerPage: 5,
+    projectsPerPage: 10
 };
 
 export default siteConfig;

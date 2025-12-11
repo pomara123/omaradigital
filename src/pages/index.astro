@@ -23,6 +23,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
                 <h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">Featured Projects</h2>
                 {featuredProjects
                     .sort((a, b) => a.data.order - b.data.order) // sort by order ascending
+                    .slice(0, 5) // only take the first 5 projects
                     .map((project) => (
                         <ProjectPreview
                             project={project}

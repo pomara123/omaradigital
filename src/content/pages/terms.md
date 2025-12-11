@@ -2,51 +2,51 @@
 title: Terms of Service
 seo:
   title: Terms of Service
-  description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
+  description: Review the terms and conditions for using the Dante website and related services.
 ---
 
-**Last updated on January 11, 2024**
+**Last updated on December 11, 2025**
 
-These Terms of Service ("Terms") govern your access to and use of [Website Name] ("the Website") and any related services provided by [Website Owner/Company] ("we," "us," or "our"). Please read these Terms carefully before using the Website.
+These Terms of Service ("Terms") govern your access to and use of [Patrick O'Mara Website](https://pomara123.github.io/patrick-omara-website/) ("the Website") and any services provided by **Patrick O'Mara** ("I," "me," or "my"). By using the Website, you agree to these Terms and my Privacy Policy. If you do not agree, please do not use the Website.
 
 **1. Acceptance of Terms**
 
-By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or the Privacy Policy, please do not use the Website.
+Accessing or using the Website indicates your agreement to these Terms and our Privacy Policy. If you disagree, you must not use the Website.
 
-**2. Changes to Terms**
+**2. Updates to Terms**
 
-We reserve the right to modify, amend, or update these Terms at any time. Such changes will be effective upon posting on the Website. It is your responsibility to review these Terms regularly. Your continued use of the Website after any changes indicates your acceptance of the revised Terms.
+We may modify or update these Terms at any time. Updates take effect when posted on the Website. You are responsible for reviewing these Terms regularly. Continued use after changes constitutes acceptance of the updated Terms.
 
 **3. Use of the Website**
 
-You agree to use the Website for lawful purposes and in a manner consistent with these Terms. You are responsible for any content you post or submit on the Website.
+You agree to use the Website lawfully and responsibly. You are solely responsible for any content you submit or post.
 
-**4. Registration and Account**
+**4. Registration and Accounts**
 
-Certain areas of the Website may require registration or the creation of an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+Some features may require creating an account. You agree to provide accurate, complete, and current information and to update it as necessary. You are responsible for safeguarding your account credentials and for all activities under your account.
 
 **5. Content and Intellectual Property**
 
-The content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute the content without our prior written consent.
+All content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and protected under intellectual property laws. You may not copy, reproduce, or distribute content without prior written permission.
 
 **6. Third-Party Links**
 
-The Website may contain links to third-party websites or resources. We do not endorse and are not responsible for the content, products, or services provided by third parties. Your use of such websites is at your own risk.
+The Website may include links to third-party sites. We do not control, endorse, or assume responsibility for any content, products, or services on those sites. Your use of third-party sites is at your own risk.
 
 **7. Termination**
 
-We may, at our sole discretion, terminate or suspend your access to the Website at any time and for any reason, without notice.
+We may suspend or terminate your access to the Website at any time, for any reason, without notice.
 
 **8. Disclaimer**
 
-The Website and its content are provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content. We do not guarantee that the Website will be error-free or uninterrupted.
+The Website is provided "as is" and "as available." We do not guarantee that the Website is error-free or uninterrupted. We disclaim all warranties, express or implied, including accuracy, completeness, or fitness for a particular purpose.
 
 **9. Limitation of Liability**
 
-To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or in connection with the use or inability to use the Website.
+To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from your use or inability to use the Website, including lost profits, data, or goodwill.
 
 **10. Governing Law**
 
-These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of laws principles. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].
+These Terms are governed by the laws of Massachusetts, United States, without regard to conflict of law principles. Any disputes will be resolved exclusively in the courts of Massachusetts, United States.
 
-_Thank you for reading our Terms of Service. By using the Website, you agree to be bound by these Terms._
+_Thank you for reviewing our Terms of Service. Your use of the Website constitutes agreement to these Terms._
