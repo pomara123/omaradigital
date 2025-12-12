@@ -8,9 +8,9 @@ const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
     site: isProd
-        ? 'https://pomara123.github.io/patrick-omara-website'
+        ? 'https://omaradigital.com'
         : 'http://localhost:4321',
-    base: isProd ? '/patrick-omara-website/' : '/',
+    base: '/',
     vite: {
         plugins: [tailwindcss()]
     },
