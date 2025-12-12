@@ -1,44 +1,44 @@
-# name: Deploy Astro Site to omaradigital.com
+name: Deploy Astro Site to omaradigital.com
 
-# on:
-#   push:
-#     branches: [ 1-deploy-to-custom-url ]   # auto-deploy on any push to this branch
-#     # No tags for automatic deploys; old main branch workflow still handles tags
-#   workflow_dispatch:                        # allows manual trigger
+on:
+    push:
+      tags:
+        - 'v*'       # triggers on any tag starting with "v", e.g., v1.0.0
+    workflow_dispatch:  # allows manual trigger
+  
 
-# permissions:
-#   contents: read
-#   pages: write
-#   id-token: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     env:
-#       NODE_ENV: production
-#     steps:
-#       - name: Checkout your repository using git
-#         uses: actions/checkout@v5
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+    steps:
+      - uses: actions/checkout@v5
         
-#       - name: Install, build, and upload your site
-#         uses: withastro/action@v5
-#         with:
-#           path: .                       # root of your Astro project
-#           node-version: 24
-#           package-manager: pnpm@latest
-#           build-cmd: pnpm run build
-#         env:
-#           PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # optional env
+      - name: Install, build, and upload your site
+        uses: withastro/action@v5
+        with:
+          path: .
+          node-version: 24
+          package-manager: pnpm@latest
+          build-cmd: pnpm run build
+        env:
+          PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2'
 
-#   deploy:
-#     needs: build
-#     runs-on: ubuntu-latest
-#     environment:
-#       name: github-pages
-#       url: ${{ steps.deployment.outputs.page_url }}
-#     steps:
-#       - name: Deploy to GitHub Pages
-#         id: deployment
-#         uses: actions/deploy-pages@v4
-#         with:
-#           folder: dist   # only specify the folder; branch is set in repo Pages settings
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          folder: dist
