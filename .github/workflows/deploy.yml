@@ -20,4 +20,4 @@ jobs:
       - name: Deploy redirect file
         uses: actions/deploy-pages@v4
         with:
-          folder: .    # deploys the repo root where index.html resides
+          folder: .    # deploys the repo root where index.html resides on omaradigital.com
