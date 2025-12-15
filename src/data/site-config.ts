@@ -56,6 +56,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'LinkedIn',
             href: 'https://www.linkedin.com/in/patrick-o-mara/'
+        },
+        {
+            text: 'GitHub',
+            href: 'https://github.com/pomara123/omaradigital'
         }
     ],
     hero: {
