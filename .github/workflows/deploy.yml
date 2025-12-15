@@ -1,48 +1,48 @@
 name: Deploy Astro Site to omaradigital.com
 
 on:
-  # Deploy automatically when a tag starting with "v" is pushed
-  push:
-    branches:
-      - main
-    tags:
-      - 'v*'       # e.g., v1.0.0, v2.3
-  # Manual trigger from Actions tab
-  workflow_dispatch:
+    # Deploy automatically when a tag starting with "v" is pushed
+    push:
+        # branches:
+        #   - main
+        tags:
+            - 'v*' # e.g., v1.0.0, v2.3
+    # Manual trigger from Actions tab
+    workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: read
+    pages: write
+    id-token: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-        
-      - name: Install, build, and upload your site
-        uses: withastro/action@v5
-        with:
-          path: .                     # root of your Astro project
-          node-version: 24
-          package-manager: pnpm@latest
-          build-cmd: pnpm run build
+    build:
+        runs-on: ubuntu-latest
         env:
-          PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # optional env
+            NODE_ENV: production
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          folder: dist   # the folder Astro outputs
+            - name: Install, build, and upload your site
+              uses: withastro/action@v5
+              with:
+                  path: . # root of your Astro project
+                  node-version: 24
+                  package-manager: pnpm@latest
+                  build-cmd: pnpm run build
+              env:
+                  PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # optional env
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+              with:
+                  folder: dist # the folder Astro outputs
