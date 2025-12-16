@@ -1,0 +1,58 @@
+---
+// LabWorkflowMap.astro
+import cytoscape from 'cytoscape';
+---
+
+<div id="cy" style="width: 100%; height: 500px; border: 1px solid #ccc;"></div>
+
+<script is:inline type="module">
+    import cytoscape from 'cytoscape';
+
+    const elements = [
+        { data: { id: 'S1', label: 'Sample 1', status: 'complete' } },
+        { data: { id: 'A1', label: 'Assay 1', status: 'partial' } },
+        { data: { id: 'R1', label: 'Result 1', status: 'missing' } },
+        { data: { source: 'S1', target: 'A1' } },
+        { data: { source: 'A1', target: 'R1' } }
+    ];
+
+    const cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements,
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    label: 'data(label)',
+                    'text-valign': 'center',
+                    color: '#fff',
+                    'text-outline-width': 2,
+                    'text-outline-color': '#555',
+                    'background-color': (ele) => {
+                        const status = ele.data('status');
+                        if (status === 'complete') return '#28a745';
+                        if (status === 'partial') return '#ffc107';
+                        if (status === 'missing') return '#dc3545';
+                        return '#6c757d';
+                    }
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    width: 2,
+                    'line-color': '#555',
+                    'target-arrow-color': '#555',
+                    'target-arrow-shape': 'triangle',
+                    'curve-style': 'bezier'
+                }
+            }
+        ],
+        layout: { name: 'breadthfirst', directed: true, padding: 10 }
+    });
+
+    cy.on('tap', 'node', (evt) => {
+        const node = evt.target;
+        alert(`Node: ${node.data('label')}\nStatus: ${node.data('status')}`);
+    });
+</script>

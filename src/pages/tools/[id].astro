@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content';
+import LabWorkflowMap from '../../components/LabWorkflowMap.jsx'; // React component
+import ToolPreview from '../../components/ToolPreview.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+
+export async function getStaticPaths() {
+    const tools = (await getCollection('tools')).sort(sortItemsByDateDesc);
+
+    return tools.map((tool, index) => ({
+        params: { id: tool.id },
+        props: {
+            tool,
+            prevTool: index + 1 !== tools.length ? tools[index + 1] : null,
+            nextTool: index !== 0 ? tools[index - 1] : null
+        }
+    }));
+}
+
+const { tool, prevTool, nextTool } = Astro.props;
+const { title, description, seo } = tool.data;
+const { Content } = await render(tool);
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} pageType="article">
+    <article class="mb-16 sm:mb-24">
+        <header class="mb-8">
+            <h1 class="font-serif text-3xl sm:text-5xl">{title}</h1>
+        </header>
+
+        <div class="prose sm:prose-lg max-w-none">
+            <Content />
+        </div>
+
+        <!-- Interactive Lab Workflow Map -->
+        <section class="mt-12">
+            <h2 class="mb-4 font-serif text-2xl">Interactive Lab Workflow Map</h2>
+            <LabWorkflowMap client:load />
+        </section>
+    </article>
+
+    {
+        (prevTool || nextTool) && (
+            <div class="my-16 sm:my-24">
+                <h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">View Next Tool</h2>
+                {nextTool && <ToolPreview tool={nextTool} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {prevTool && <ToolPreview tool={prevTool} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            </div>
+        )
+    }
+</BaseLayout>

@@ -25,6 +25,10 @@ const siteConfig: SiteConfig = {
             text: 'Projects',
             href: `${base}projects`
         },
+        {
+            text: 'Tools',
+            href: `${base}tools`
+        },
         // {
         //     text: 'Blog',
         //     href: '/blog'
