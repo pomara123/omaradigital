@@ -1,6 +1,6 @@
 ---
 title: Enterprise LIMS Implementation
-description: A scalable, compliant, and extensible Core LIMS foundation enabling end to end scientific and operational workflows across R and D, Operations, and Quality.
+description: A scalable, compliant, and extensible Core LIMS foundation enabling end to end scientific and operational workflows across Product Development and Manufacturing.
 publishDate: 'Dec 4 2025'
 isFeatured: true
 order: 40
@@ -41,7 +41,7 @@ Java
 JavaScript  
 REST APIs  
 OData  
-SQL  
+SQL
 
 ## Outcome
 
