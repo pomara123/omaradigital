@@ -16,6 +16,7 @@
         "@astrojs/sitemap": "^3.6.0",
         "@fontsource-variable/inter": "^5.2.8",
         "@fontsource-variable/newsreader": "^5.2.10",
+        "@tailwindcss/typography": "^0.5.19",
         "@tailwindcss/vite": "^4.1.17",
         "astro": "^5.15.9",
         "cytoscape": "^3.33.1",
@@ -25,8 +26,10 @@
         "sharp": "^0.34.5",
         "tailwindcss": "^4.1.17"
     },
+    "pnpm": {
+        "onlyBuiltDependencies": ["esbuild", "sharp"]
+    },
     "devDependencies": {
-        "@tailwindcss/typography": "^0.5.19",
         "prettier": "^3.6.2",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-tailwindcss": "^0.7.1",
