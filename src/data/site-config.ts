@@ -4,7 +4,7 @@ import type { SiteConfig } from '../types';
 const base = import.meta.env.BASE_URL || '/';
 
 const siteConfig: SiteConfig = {
-    website: 'https://pomara123.github.io/patrick-omara-website/',
+    website: 'https://omaradigital.com',
     avatar: {
         src: avatar,
         alt: "Patrick O'Mara"
