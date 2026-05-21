@@ -5,13 +5,12 @@ import Hero from '../components/Hero.astro';
 import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const base = import.meta.env.BASE_URL || '/';
 //const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 //const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 
-const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+const projects = await getCollection('projects');
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 

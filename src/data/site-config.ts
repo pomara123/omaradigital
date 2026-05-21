@@ -4,7 +4,7 @@ import type { SiteConfig } from '../types';
 const base = import.meta.env.BASE_URL || '/';
 
 const siteConfig: SiteConfig = {
-    website: 'https://pomara123.github.io/patrick-omara-website/',
+    website: 'https://omaradigital.com',
     avatar: {
         src: avatar,
         alt: "Patrick O'Mara"
@@ -89,7 +89,7 @@ const siteConfig: SiteConfig = {
     //     }
     // },
     postsPerPage: 5,
-    projectsPerPage: 10
+    projectsPerPage: 25
 };
 
 export default siteConfig;
