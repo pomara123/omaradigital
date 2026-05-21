@@ -21,9 +21,6 @@
         "sharp": "^0.34.5",
         "tailwindcss": "^4.1.17"
     },
-    "pnpm": {
-        "onlyBuiltDependencies": ["esbuild", "sharp"]
-    },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.19",
         "prettier": "^3.6.2",
