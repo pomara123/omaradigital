@@ -25,6 +25,10 @@ const siteConfig: SiteConfig = {
             text: 'Projects',
             href: `${base}projects`
         },
+        {
+            text: 'Tools',
+            href: `${base}tools`
+        },
         // {
         //     text: 'Blog',
         //     href: '/blog'
@@ -85,7 +89,8 @@ const siteConfig: SiteConfig = {
     //     }
     // },
     postsPerPage: 5,
-    projectsPerPage: 25
+    projectsPerPage: 25,
+    toolsPerPage: 25
 };
 
 export default siteConfig;

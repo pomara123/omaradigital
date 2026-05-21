@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@astrojs/mdx": "^4.3.10",
+        "@astrojs/react": "^5.0.5",
         "@astrojs/rss": "^4.0.13",
         "@astrojs/sitemap": "^3.6.0",
         "@fontsource-variable/inter": "^5.2.8",
@@ -19,11 +20,16 @@
         "@tailwindcss/vite": "^4.1.17",
         "astro": "^5.15.9",
         "marked": "^17.0.0",
+        "react": "^19.2.6",
+        "react-dom": "^19.2.6",
         "sharp": "^0.34.5",
         "tailwindcss": "^4.1.17"
     },
     "pnpm": {
-        "onlyBuiltDependencies": ["esbuild", "sharp"]
+        "onlyBuiltDependencies": [
+            "esbuild",
+            "sharp"
+        ]
     },
     "devDependencies": {
         "prettier": "^3.6.2",
