@@ -1,3 +1,4 @@
+import jsPDF from 'jspdf';
 import { useMemo, useRef, useState } from 'react';
 
 const LEVELS = ['None', 'Ad Hoc', 'Defined', 'Operational', 'Optimized'];
@@ -107,6 +108,33 @@ function validateCriteria(data) {
     return null;
 }
 
+const WEIGHTS = [
+    { w: 1, icon: '○', label: 'Standard', detail: 'Standard priority — counts at face value', selectedClass: 'bg-gray-200 text-gray-600 dark:bg-gray-600 dark:text-gray-200' },
+    { w: 2, icon: '●', label: 'Regulated', detail: 'Regulated — counts 2× in Compliance Readiness (audit trails, access controls, etc.)', selectedClass: 'bg-orange-100 text-orange-600 dark:bg-orange-900/50 dark:text-orange-400' },
+    { w: 3, icon: '▲', label: 'Critical', detail: 'Critical — counts 3× in Compliance Readiness (GxP, 21 CFR Part 11, etc.)', selectedClass: 'bg-red-100 text-red-600 dark:bg-red-900/50 dark:text-red-400' },
+];
+
+function WeightSelector({ value, onChange }) {
+    return (
+        <div className="flex shrink-0 gap-0.5">
+            {WEIGHTS.map(({ w, icon, detail, selectedClass }) => (
+                <button
+                    key={w}
+                    onClick={() => onChange(w)}
+                    title={detail}
+                    className={`flex h-5 w-5 items-center justify-center rounded text-xs transition-colors ${
+                        value === w
+                            ? selectedClass
+                            : 'bg-gray-50 text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-600 dark:hover:bg-gray-700'
+                    }`}
+                >
+                    {icon}
+                </button>
+            ))}
+        </div>
+    );
+}
+
 function MaturitySelector({ value, onChange }) {
     return (
         <div className="flex shrink-0 gap-0.5">
@@ -132,7 +160,7 @@ function MaturitySelector({ value, onChange }) {
     );
 }
 
-function RadarChart({ categories, scores }) {
+function RadarChart({ categories, scores, svgRef }) {
     const cx = 210, cy = 200, r = 120;
     const n = categories.length;
 
@@ -154,7 +182,7 @@ function RadarChart({ categories, scores }) {
     const gridLevels = [0.25, 0.5, 0.75, 1.0];
 
     return (
-        <svg viewBox="0 0 420 400" className="w-full max-w-sm mx-auto">
+        <svg ref={svgRef} viewBox="0 0 420 400" className="w-full max-w-sm mx-auto">
             {gridLevels.map((level) => (
                 <polygon key={level} points={toPoints(categories.map(() => level))} fill="none" stroke="#e5e7eb" strokeWidth="1" />
             ))}
@@ -189,7 +217,9 @@ export default function GovernanceGapAnalyzer() {
     const [answers, setAnswers] = useState(() => DEFAULT_CATEGORIES.map((cat) => cat.items.map(() => 0)));
     const [isCustom, setIsCustom] = useState(false);
     const [importError, setImportError] = useState('');
+    const [pdfExporting, setPdfExporting] = useState(false);
     const fileInputRef = useRef(null);
+    const radarRef = useRef(null);
 
     const loadCategories = (newCategories) => {
         setCategories(newCategories);
@@ -235,6 +265,241 @@ export default function GovernanceGapAnalyzer() {
         };
         reader.readAsText(file);
         e.target.value = '';
+    };
+
+    const handleExportPDF = async () => {
+        setPdfExporting(true);
+        try {
+            const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+            const margin = 16;
+            const pageW = 210;
+            const contentW = pageW - 2 * margin;
+            let y = margin;
+
+            // Header
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(17);
+            doc.setTextColor(30, 30, 30);
+            doc.text('Data Governance Gap Analysis', margin, y);
+            y += 6;
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8.5);
+            doc.setTextColor(120, 120, 120);
+            doc.text(
+                new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+                margin,
+                y
+            );
+            y += 10;
+
+            // Score summary boxes
+            const boxW = (contentW - 6) / 2;
+            const drawScoreBox = (label, score, bx) => {
+                doc.setDrawColor(200, 200, 200);
+                doc.setLineWidth(0.3);
+                doc.roundedRect(bx, y, boxW, 17, 2, 2, 'S');
+                doc.setFontSize(7.5);
+                doc.setTextColor(100, 100, 100);
+                doc.setFont('helvetica', 'normal');
+                doc.text(label, bx + boxW / 2, y + 5.5, { align: 'center' });
+                const c = score >= 75 ? [22, 163, 74] : score >= 50 ? [161, 98, 7] : [185, 28, 28];
+                doc.setTextColor(...c);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(19);
+                doc.text(`${score}%`, bx + boxW / 2, y + 13.5, { align: 'center' });
+            };
+            drawScoreBox('Overall Maturity', overallScore, margin);
+            drawScoreBox('Compliance Readiness', complianceScore, margin + boxW + 6);
+            y += 22;
+
+            // Key / legend
+            doc.setDrawColor(220, 220, 220);
+            doc.setLineWidth(0.3);
+            doc.roundedRect(margin, y, contentW, 14, 2, 2, 'S');
+            doc.setFontSize(7);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(80, 80, 80);
+            doc.text('Maturity:', margin + 3, y + 5);
+            doc.setFont('helvetica', 'normal');
+            doc.text('0 = None   1 = Ad Hoc   2 = Defined   3 = Operational   4 = Optimized', margin + 18, y + 5);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Priority:', margin + 3, y + 10.5);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(100, 100, 100);
+            doc.text('(none) = Standard   ', margin + 18, y + 10.5);
+            doc.setTextColor(194, 65, 12);
+            doc.text('[R] = Regulated (2x weight in compliance score)   ', margin + 53, y + 10.5);
+            doc.setTextColor(185, 28, 28);
+            doc.text('[!] = Critical (3x weight, GxP / regulatory)', margin + 122, y + 10.5);
+            y += 20;
+
+            // Radar chart via SVG → canvas → PNG
+            if (radarRef.current) {
+                await new Promise((resolve) => {
+                    try {
+                        const svgEl = radarRef.current;
+                        const svgData = new XMLSerializer().serializeToString(svgEl);
+                        const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+                        const svgUrl = URL.createObjectURL(svgBlob);
+                        const img = new Image();
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = 420;
+                            canvas.height = 400;
+                            const ctx = canvas.getContext('2d');
+                            ctx.fillStyle = '#ffffff';
+                            ctx.fillRect(0, 0, 420, 400);
+                            ctx.drawImage(img, 0, 0);
+                            URL.revokeObjectURL(svgUrl);
+                            const chartW = 72;
+                            const chartH = chartW * (400 / 420);
+                            doc.addImage(
+                                canvas.toDataURL('image/png'),
+                                'PNG',
+                                margin + (contentW - chartW) / 2,
+                                y,
+                                chartW,
+                                chartH
+                            );
+                            y += chartH + 8;
+                            resolve();
+                        };
+                        img.onerror = () => { URL.revokeObjectURL(svgUrl); resolve(); };
+                        img.src = svgUrl;
+                    } catch {
+                        resolve();
+                    }
+                });
+            }
+
+            // Category scores grid
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10.5);
+            doc.setTextColor(30, 30, 30);
+            doc.text('Category Scores', margin, y);
+            y += 5;
+
+            const colW = contentW / 4;
+            categories.forEach((cat, i) => {
+                const score = Math.round(categoryScores[i] * 100);
+                const cx = margin + (i % 4) * colW;
+                const rowY = y + Math.floor(i / 4) * 8;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(8);
+                doc.setTextColor(80, 80, 80);
+                doc.text(cat.shortLabel, cx, rowY + 3.5);
+                const c = score >= 75 ? [22, 163, 74] : score >= 50 ? [161, 98, 7] : [185, 28, 28];
+                doc.setTextColor(...c);
+                doc.setFont('helvetica', 'bold');
+                doc.text(`${score}%`, cx + colW - 8, rowY + 3.5);
+            });
+            y += Math.ceil(categories.length / 4) * 8 + 8;
+
+            // Priority gaps
+            if (topGaps.length > 0) {
+                if (y > 240) { doc.addPage(); y = margin; }
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(10.5);
+                doc.setTextColor(30, 30, 30);
+                doc.text('Gap Analysis', margin, y);
+                y += 5;
+
+                topGaps.forEach(({ label, score, gapItems }) => {
+                    if (y > 270) { doc.addPage(); y = margin; }
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(8.5);
+                    doc.setTextColor(30, 30, 30);
+                    doc.text(`${label}  —  ${Math.round(score * 100)}%`, margin, y);
+                    y += 4.5;
+                    gapItems.slice(0, 5).forEach(({ text, level }) => {
+                        if (y > 275) { doc.addPage(); y = margin; }
+                        const levelLabel = LEVELS[level];
+                        const c = level === 0 ? [185, 28, 28] : level === 1 ? [194, 65, 12] : [161, 98, 7];
+                        doc.setFont('helvetica', 'bold');
+                        doc.setFontSize(7.5);
+                        doc.setTextColor(...c);
+                        doc.text(levelLabel, margin + 3, y);
+                        doc.setFont('helvetica', 'normal');
+                        doc.setTextColor(60, 60, 60);
+                        doc.text(doc.splitTextToSize(text, contentW - 26)[0], margin + 22, y);
+                        y += 4.5;
+                    });
+                    y += 2;
+                });
+                y += 4;
+            }
+
+            // Detailed assessment
+            if (y > 220) { doc.addPage(); y = margin; }
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10.5);
+            doc.setTextColor(30, 30, 30);
+            doc.text('Detailed Assessment', margin, y);
+            y += 6;
+
+            for (let ci = 0; ci < categories.length; ci++) {
+                if (y > 262) { doc.addPage(); y = margin; }
+                const cat = categories[ci];
+                const catScore = Math.round(categoryScores[ci] * 100);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(8.5);
+                doc.setTextColor(30, 30, 30);
+                doc.text(`${cat.label}`, margin, y);
+                const c = catScore >= 75 ? [22, 163, 74] : catScore >= 50 ? [161, 98, 7] : [185, 28, 28];
+                doc.setTextColor(...c);
+                doc.text(`${catScore}%`, margin + contentW, y, { align: 'right' });
+                y += 4.5;
+
+                cat.items.forEach((item, ii) => {
+                    if (y > 275) { doc.addPage(); y = margin; }
+                    const level = answers[ci][ii];
+                    const levelLabel = LEVELS[level];
+                    const wIcon = item.weight === 3 ? '[!]' : item.weight === 2 ? '[R]' : '';
+                    const wColor = item.weight === 3 ? [185, 28, 28] : item.weight === 2 ? [194, 65, 12] : [160, 160, 160];
+                    const lc = level === 0 ? [185, 28, 28] : level <= 1 ? [194, 65, 12] : level <= 2 ? [161, 98, 7] : [22, 163, 74];
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(7.5);
+                    doc.setTextColor(...wColor);
+                    doc.text(wIcon, margin + 2, y);
+                    doc.setTextColor(60, 60, 60);
+                    doc.text(doc.splitTextToSize(item.text, contentW - 32)[0], margin + 7, y);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor(...lc);
+                    doc.text(levelLabel, margin + contentW, y, { align: 'right' });
+                    y += 4.5;
+                });
+                y += 3;
+            }
+
+            // Footer on every page
+            const pageCount = doc.getNumberOfPages();
+            for (let p = 1; p <= pageCount; p++) {
+                doc.setPage(p);
+                doc.setFontSize(7);
+                doc.setFont('helvetica', 'normal');
+                doc.setTextColor(160, 160, 160);
+                doc.text(
+                    `Page ${p} of ${pageCount}  ·  omaradigital.com`,
+                    pageW / 2,
+                    291,
+                    { align: 'center' }
+                );
+            }
+
+            doc.save('governance-gap-analysis.pdf');
+        } finally {
+            setPdfExporting(false);
+        }
+    };
+
+    const setWeight = (catIdx, itemIdx, weight) => {
+        setCategories((prev) =>
+            prev.map((cat, ci) =>
+                ci === catIdx
+                    ? { ...cat, items: cat.items.map((item, ii) => (ii === itemIdx ? { ...item, weight } : item)) }
+                    : cat
+            )
+        );
     };
 
     const setLevel = (catIdx, itemIdx, level) => {
@@ -290,8 +555,7 @@ export default function GovernanceGapAnalyzer() {
                         .sort((a, b) => (4 - b.level) * b.weight - (4 - a.level) * a.weight),
                 }))
                 .filter(({ gapItems }) => gapItems.length > 0)
-                .sort((a, b) => a.score - b.score)
-                .slice(0, 3),
+                .sort((a, b) => a.score - b.score),
         [categories, categoryScores, answers]
     );
 
@@ -303,11 +567,15 @@ export default function GovernanceGapAnalyzer() {
             {/* Toolbar */}
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 rounded-lg bg-gray-50 px-4 py-2.5 text-xs text-gray-500 dark:bg-gray-800">
                 <span>
-                    <strong>Scale:</strong> 0 = None · 1 = Ad Hoc · 2 = Defined · 3 = Operational · 4 = Optimized
+                    <strong>Maturity:</strong> 0 = None · 1 = Ad Hoc · 2 = Defined · 3 = Operational · 4 = Optimized
                 </span>
                 <span>
-                    <span className="text-red-500">▲</span> Critical &nbsp;
-                    <span className="text-orange-500">●</span> Regulated
+                    <strong>Priority:</strong>{' '}
+                    <span className="text-gray-500">○ Standard</span> ·{' '}
+                    <span className="text-orange-500">● Regulated</span>{' '}
+                    <span className="text-gray-400">(2× compliance weight)</span> ·{' '}
+                    <span className="text-red-500">▲ Critical</span>{' '}
+                    <span className="text-gray-400">(3× — GxP / regulatory)</span>
                 </span>
                 <div className="ml-auto flex items-center gap-3">
                     {isCustom && (
@@ -317,6 +585,13 @@ export default function GovernanceGapAnalyzer() {
                     )}
                     <button onClick={reset} className="underline hover:text-gray-700 dark:hover:text-gray-200">
                         Reset scores
+                    </button>
+                    <button
+                        onClick={handleExportPDF}
+                        disabled={pdfExporting}
+                        className="rounded border border-gray-300 px-2 py-0.5 hover:bg-gray-100 disabled:opacity-50 dark:border-gray-600 dark:hover:bg-gray-700"
+                    >
+                        {pdfExporting ? 'Generating…' : 'Export PDF'}
                     </button>
                     <button onClick={handleExport} className="rounded border border-gray-300 px-2 py-0.5 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-700">
                         Export criteria
@@ -356,20 +631,27 @@ export default function GovernanceGapAnalyzer() {
                             </div>
                             <ul className="flex flex-col gap-2.5">
                                 {cat.items.map((item, itemIdx) => (
-                                    <li key={itemIdx} className="flex items-center gap-2">
-                                        <div className="flex min-w-0 flex-1 items-start gap-1">
-                                            {item.weight >= 3 && (
-                                                <span className="mt-0.5 shrink-0 text-xs text-red-500">▲</span>
+                                    <li key={itemIdx} className="flex items-start gap-2">
+                                        <span className="mt-0.5 text-sm leading-none">
+                                            {item.weight >= 3 ? (
+                                                <span className="text-red-500">▲</span>
+                                            ) : item.weight === 2 ? (
+                                                <span className="text-orange-500">●</span>
+                                            ) : (
+                                                <span className="text-gray-300 dark:text-gray-600">○</span>
                                             )}
-                                            {item.weight === 2 && (
-                                                <span className="mt-0.5 shrink-0 text-xs text-orange-500">●</span>
-                                            )}
-                                            <span className="text-sm">{item.text}</span>
+                                        </span>
+                                        <span className="min-w-0 flex-1 text-sm">{item.text}</span>
+                                        <div className="flex shrink-0 items-center gap-1.5">
+                                            <WeightSelector
+                                                value={item.weight}
+                                                onChange={(w) => setWeight(catIdx, itemIdx, w)}
+                                            />
+                                            <MaturitySelector
+                                                value={answers[catIdx][itemIdx]}
+                                                onChange={(level) => setLevel(catIdx, itemIdx, level)}
+                                            />
                                         </div>
-                                        <MaturitySelector
-                                            value={answers[catIdx][itemIdx]}
-                                            onChange={(level) => setLevel(catIdx, itemIdx, level)}
-                                        />
                                     </li>
                                 ))}
                             </ul>
@@ -379,7 +661,7 @@ export default function GovernanceGapAnalyzer() {
 
                 {/* Radar + Scores */}
                 <div className="flex flex-col items-center gap-6 lg:sticky lg:top-8 lg:self-start">
-                    <RadarChart categories={categories} scores={categoryScores} />
+                    <RadarChart categories={categories} scores={categoryScores} svgRef={radarRef} />
                     <div className="grid w-full grid-cols-2 gap-3 text-center">
                         <div className="rounded-lg border border-gray-200 p-3 dark:border-gray-700">
                             <p className="text-xs text-gray-500">Overall Maturity</p>
@@ -408,7 +690,7 @@ export default function GovernanceGapAnalyzer() {
             {/* Priority Gaps */}
             {topGaps.length > 0 && (
                 <div>
-                    <h3 className="mb-4 font-serif text-xl font-medium">Priority Gaps</h3>
+                    <h3 className="mb-4 font-serif text-xl font-medium">Gap Analysis</h3>
                     <div className="grid gap-4 sm:grid-cols-3">
                         {topGaps.map(({ label, gapItems }) => (
                             <div key={label} className="rounded-lg border border-gray-200 p-4 dark:border-gray-700">
